@@ -2,14 +2,15 @@ const express = require('express'),
   app = express(),
   PORT = process.env.PORT || 4000;
 
-app.use('/public', express.static('public'));
+app.set('view engine', 'pug');
+app.use('/dist', express.static('dist'));
 
 app.get('/_health', (req, res) => {
   res.send(':-)');
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.render('index');
 });
 
 app.listen(PORT, () => {
