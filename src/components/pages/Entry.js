@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Entry = () => (
+const Entry = (props) => (
   <div>
-    <h1>Entry for 2</h1>
+    <h1>Entry for {props.match.params.number}</h1>
   </div>
 )
 
