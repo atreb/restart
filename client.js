@@ -25,7 +25,3 @@ render((
     </div>
   </BrowserRouter>
 ), document.getElementById('root'));
-
-/*
-The pathname /entries/6 will generate a params object : { number: '6' }
-*/
