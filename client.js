@@ -6,7 +6,7 @@ import Header from './components/common/Header'
 import Home from './components/pages/Home'
 import Page1 from './components/pages/Page1'
 import Page2 from './components/pages/Page2'
-import Todo from './components/pages/Todo'
+import Todo from './components/pages/TodoReactState'
 import Entry from './components/pages/Entry'
 import Entries from './components/pages/Entries'
 
