@@ -11,3 +11,11 @@ cd restart
 npm i
 npm run dev
 ```
+
+
+TODO:
+- get the params number in Entry.js
+- add redux
+- split bundle into vendor and app code
+- add extra plugins in webpack
+- keep restart client side only for now
