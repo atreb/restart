@@ -13,7 +13,7 @@ import Entries from './components/pages/Entries'
 render((
   <BrowserRouter>
     <div>
-    <Header />
+    <Header/>
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/page1' component={Page1}/>

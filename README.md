@@ -11,11 +11,8 @@ cd restart
 npm i
 npm run dev
 ```
-
-
-TODO:
-- get the params number in Entry.js
-- add redux
-- split bundle into vendor and app code
-- add extra plugins in webpack
-- keep restart client side only for now
+# folder structure
+- components: holds the react components
+- static: holds all the static assets. static/build will have the compiled client side js
+- client.js: entry point for webpack for compiling the client side js
+- server.js: entry point for express server
