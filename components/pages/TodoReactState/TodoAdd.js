@@ -14,7 +14,9 @@ export default class TodoPage extends React.Component {
     this.setState({text: event.target.value});
   }
   handleAdd () {
-    if (this.state.text === '') alert('Please enter text');
+    if (this.state.text === '') {
+      return alert('Please enter text');
+    }
     this.props.handleAdd(this.state.text);
   }
   render() {
