@@ -1,5 +1,5 @@
 /*
-CONTAINER COMPONENT
+PARENT COMPONENT
 */
 import React from 'react'
 import TodoList from './TodoList'
@@ -11,8 +11,7 @@ export default class TodoPage extends React.Component {
     this.state = {
       count: 0,
       todos: {},
-      visibilityFilter: 'ALL',
-      newtodotext: ''
+      visibilityFilter: 'ALL'
     }
   }
   handleNewTodoText (event) {
