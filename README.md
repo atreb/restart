@@ -16,3 +16,5 @@ npm run dev
 - static: holds all the static assets. static/build will have the compiled client side js
 - client.js: entry point for webpack for compiling the client side js
 - server.js: entry point for express server
+- actions: holds the actions and action creators for redux
+- reducers: holds the reducers for redux. reducers/index.js exports the combined reducer
