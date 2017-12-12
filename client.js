@@ -12,7 +12,10 @@ import Entry from './components/pages/Entry'
 import Entries from './components/pages/Entries'
 
 import { Provider } from 'react-redux'
-import store from './store'
+import { createStore } from 'redux'
+import reducer from './reducers'
+
+const store = createStore(reducer);
 
 render((
   <Provider store={store}>
