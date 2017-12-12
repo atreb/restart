@@ -1,4 +1,4 @@
-import {TODO_ADD, TODO_REMOVE, TODO_TOGGLE, TODO_CHANGE_FILTER} from '../actions/todos'
+import {TODO_ADD, TODO_REMOVE, TODO_TOGGLE, TODO_CHANGE_FILTER, TODO_NEW, TODO_NEW_RESET} from '../actions/todos'
 
 let count = 0;
 
@@ -13,7 +13,6 @@ export const todoReducer = (state = {}, action) => {
       delete clonedTodo[action.id];
       return Object.assign({}, clonedTodo)
     case TODO_TOGGLE:
-      console.log('inside toggle reducer')
       clonedTodo[action.id].complete = !clonedTodo[action.id].complete;
       return Object.assign({}, clonedTodo)
     default:
@@ -22,9 +21,20 @@ export const todoReducer = (state = {}, action) => {
 }
 
 export const filterReducer = (state = 'ALL', action) => {
-  switch(action.type) {
+  switch (action.type) {
     case TODO_CHANGE_FILTER:
       return action.filter;
+    default:
+      return state;
+  }
+}
+
+export const todoNewReducer = (state = '', action) => {
+  switch (action.type) {
+    case TODO_NEW:
+      return action.text;
+    case TODO_NEW_RESET:
+      return ''
     default:
       return state;
   }

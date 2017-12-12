@@ -3,29 +3,19 @@ PRESENTATION COMPONENT
 */
 import React from 'react'
 
-export default class TodoPage extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      text: ''
-    }
-  }
-  handleTodoText (event) {
-    this.setState({text: event.target.value});
-  }
-  handleAdd () {
-    if (this.state.text === '') {
-      return alert('Please enter text');
-    }
-    this.props.handleAdd(this.state.text);
-    this.setState({text: ''});
-  }
-  render() {
-    return (
-      <div>
-        <input type='text' value={this.state.text} onChange={this.handleTodoText.bind(this)}/>
-        <button onClick={this.handleAdd.bind(this)}>ADD</button>
-      </div>
-    )
-  }
+const TodoAdd = (props) => {
+  return (
+    <div>
+      <input type='text' value={props.newTodoText} onChange={(event) => {
+        props.updateNewTodoText(event.target.value)
+      }}/>
+      <button onClick={() => {
+        if (props.newTodoText === '') return alert('Please enter text');
+        props.handleAdd(props.newTodoText);
+        props.resetNewTodoText();
+      }}>ADD</button>
+    </div>
+  )
 }
+
+export default TodoAdd
