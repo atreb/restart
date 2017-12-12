@@ -12,10 +12,15 @@ import Entry from './components/pages/Entry'
 import Entries from './components/pages/Entries'
 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import {createLogger} from 'redux-logger'
 import reducer from './reducers'
 
-const store = createStore(reducer);
+const logger = createLogger({});
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+);
 
 render((
   <Provider store={store}>
