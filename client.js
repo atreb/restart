@@ -11,10 +11,8 @@ import TodoRedux from './components/pages/TodoRedux'
 import Entry from './components/pages/Entry'
 import Entries from './components/pages/Entries'
 
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducers'
-const store = createStore(reducer);
+import store from './store'
 
 render((
   <Provider store={store}>
