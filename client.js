@@ -8,6 +8,7 @@ import Page1 from './components/pages/Page1'
 import Page2 from './components/pages/Page2'
 import TodoReactState from './components/pages/TodoReactState'
 import TodoRedux from './components/pages/TodoRedux'
+import CrudRedux from './components/pages/CrudRedux'
 import Entry from './components/pages/Entry'
 import Entries from './components/pages/Entries'
 
@@ -15,11 +16,12 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import {createLogger} from 'redux-logger'
 import reducer from './reducers'
+import thunk from 'redux-thunk';
 
 const logger = createLogger({});
 const store = createStore(
   reducer,
-  applyMiddleware(logger)
+  applyMiddleware(thunk, logger)
 );
 
 render((
@@ -33,6 +35,7 @@ render((
           <Route path='/page2' component={Page2}/>
           <Route path='/todoreactstate' component={TodoReactState}/>
           <Route path='/todoredux' component={TodoRedux}/>
+          <Route path='/crudredux' component={CrudRedux}/>
           <Route path='/entries/:number' component={Entry}/>
           <Route path='/entries' component={Entries}/>
         </Switch>
